@@ -12,8 +12,9 @@ part 'crypto_names_bloc.freezed.dart';
 class CryptoNamesBloc extends Bloc<CryptoNamesEvent, CryptoNamesState> {
   final ICryptoNamesRepo _cryptoNamesRepo;
 
-  CryptoNamesBloc(this._cryptoNamesRepo) : super(CryptoNamesState.initial());
-  CryptoListModel? cryptocurrencies;
+  CryptoNamesBloc(this._cryptoNamesRepo)
+      : super(const CryptoNamesState.initial());
+  @override
   Stream<CryptoNamesState> mapEventToState(
     CryptoNamesEvent event,
   ) async* {
@@ -21,11 +22,10 @@ class CryptoNamesBloc extends Bloc<CryptoNamesEvent, CryptoNamesState> {
       getCryptoNames: (e) async* {
         yield const CryptoNamesState.loading();
         final data = await _cryptoNamesRepo.getCryptoNames();
-        data.fold((l) => null, (r) => cryptocurrencies = r);
         yield data.fold((l) => CryptoNamesState.loadFailure(l),
             (r) => CryptoNamesState.loadSuccess(r));
       },
-     
+
       // },
     );
   }

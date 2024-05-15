@@ -32,4 +32,27 @@ class CryptoNamesRepo implements ICryptoNamesRepo {
       );
     }
   }
+
+  @override
+  Future<Either<String, List<String>>> getCryptoPairs({int? pageNo}) async {
+    try {
+      Dio dio = Dio();
+      Response response = await dio.get(APIConstants.exchangeInfo);
+      // log(response.toString());
+      final cryptoPairsListData = response.data['symbols'] as List;
+      final List<String> cryptoPairsList = [];
+
+      for (int i = 0 + (25 * pageNo!); i < 25 + (25 * pageNo); i++) {
+        cryptoPairsList.add(cryptoPairsListData[i]['pair']);
+      }
+      // cryptoPairsListData.map((e) {
+      //   cryptoPairsList.add(e['pair']);
+      // }).toList();
+      return right(cryptoPairsList);
+    } catch (e) {
+      return left(
+        ("Error loading users: ${e.toString()}"),
+      );
+    }
+  }
 }

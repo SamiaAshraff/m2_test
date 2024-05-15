@@ -6,6 +6,14 @@ Color black = Colors.black;
 SizedBox h20 = SizedBox(
   height: 20,
 );
+
+TextStyle f12black = GoogleFonts.figtree(
+  textStyle: TextStyle(
+      fontSize: 12,
+      color: black,
+      fontFamily: 'Poppins',
+      fontWeight: FontWeight.w600),
+);
 TextStyle f14black = GoogleFonts.figtree(
   textStyle: TextStyle(
       fontSize: 14,

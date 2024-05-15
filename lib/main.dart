@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
-import 'package:m2_test/features/home/home.dart';
+import 'package:m2_test/features/home/view/home.dart';
 import 'package:m2_test/injection.dart';
 
 Future<void> main() async {

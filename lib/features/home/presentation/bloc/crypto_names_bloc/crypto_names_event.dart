@@ -5,5 +5,7 @@ class CryptoNamesEvent with _$CryptoNamesEvent {
    const factory CryptoNamesEvent.getCryptoNames() =
       _GetCryptoNames;
 
+      
+
      
 }
