@@ -1,16 +1,25 @@
-# m2_test
+# M2 Assessment 
 
-A new Flutter project.
+A small-scale Flutter application that showcases a list of cryptocurrencies, cryptocurrency pairs and also display real-time price data changes for the cryptocurrency pairs using WebSocket market stream.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Setup Instructions
 
-A few resources to get you started if this is your first Flutter project:
+Follow these steps to get started with the project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+1. Ensure you have Flutter SDK installed. If not, refer to the [Flutter Installation Guide](https://flutter.dev/docs/get-started/install) for instructions.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+2. Clone this repository to your local machine:
+
+git clone https://github.com/SamiaAshraff/m2_test
+
+3. Navigate to the project directory:
+
+4. Run the project on an emulator or connected device:
+
+flutter run
+
+## Assumptions
+The app is scalable to support more features. 
+
+## JSON Data
