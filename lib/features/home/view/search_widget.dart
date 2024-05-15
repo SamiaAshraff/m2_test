@@ -10,22 +10,17 @@ class SearchWidget extends StatefulWidget {
 }
 
 class _SearchWidgetState extends State<SearchWidget> {
-  // List<CryptoNamesModel> searchListTemp = [];
-
-  // @override
-  // void initState() {
-  //   setState(() {
-  //     searchListTemp = widget.searchList;
-  //   });
-  //   super.initState();
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: TextField(
-          decoration: InputDecoration(hintText: 'Search'),
+          onTap: () {
+            showSearch(
+                context: context,
+                delegate: SearchField(searchList: widget.searchList));
+          },
+          decoration: const InputDecoration(hintText: 'Search cryptocurrency'),
         ),
         actions: [
           IconButton(
@@ -45,11 +40,9 @@ class _SearchWidgetState extends State<SearchWidget> {
 class SearchField extends SearchDelegate {
   late List<CryptoNamesModel> searchList;
   SearchField({
-   required  this.searchList,
+    required this.searchList,
   });
 
-  // List<CryptoNamesModel> cryptoNamesList;
-  // List listof = widget.searchList;
   @override
   List<Widget>? buildActions(BuildContext context) {
     return [
@@ -57,7 +50,7 @@ class SearchField extends SearchDelegate {
         onPressed: () {
           query = '';
         },
-        icon: Icon(Icons.clear),
+        icon: const Icon(Icons.clear),
       ),
     ];
   }
@@ -68,7 +61,7 @@ class SearchField extends SearchDelegate {
       onPressed: () {
         close(context, null);
       },
-      icon: Icon(Icons.arrow_back),
+      icon: const Icon(Icons.arrow_back),
     );
   }
 

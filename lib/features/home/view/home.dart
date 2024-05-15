@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:m2_test/constants/constants.dart';
 import 'package:m2_test/features/cryptocurriences_pairs/view/cryptocurriences_pairs.dart';
 import 'package:m2_test/features/home/presentation/bloc/crypto_names_bloc/crypto_names_bloc.dart';
@@ -45,7 +46,8 @@ class HomeView extends StatelessWidget {
                                 ListView.builder(
                                     itemCount: crytocurrencies.length,
                                     shrinkWrap: true,
-                                    physics: NeverScrollableScrollPhysics(),
+                                    physics:
+                                        const NeverScrollableScrollPhysics(),
                                     itemBuilder:
                                         (BuildContext context, int index) {
                                       return Card(
@@ -62,17 +64,7 @@ class HomeView extends StatelessWidget {
                                                     .toString(),
                                                 style: f14black,
                                               ),
-                                              IconButton(
-                                                onPressed: () {
-                                                  // context
-                                                  //     .read<CryptoListCubit>()
-                                                  //     .markFavourite(index);
-                                                },
-                                                icon: const Icon(
-                                                  Icons.favorite,
-                                                  color: Colors.black,
-                                                ),
-                                              )
+                                              const FavouriteCrypto()
                                             ],
                                           ),
                                         ),
@@ -100,11 +92,33 @@ class HomeView extends StatelessWidget {
                           builder: (context) => const CryptocurrenciesPairs()),
                     );
                   },
-                  child: Text('View Cryptocurrency Pairs')),
+                  child: const Text('View Cryptocurrency Pairs')),
             ),
           ],
         ),
       ),
+    );
+  }
+}
+
+class FavouriteCrypto extends HookWidget {
+  const FavouriteCrypto({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final fav = useState(false);
+    return IconButton(
+      onPressed: () {
+        fav.value = !fav.value;
+      },
+      icon: fav.value
+          ? const Icon(
+              Icons.favorite,
+              color: Colors.black,
+            )
+          : const Icon(Icons.favorite_border),
     );
   }
 }

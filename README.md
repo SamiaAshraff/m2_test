@@ -24,6 +24,8 @@ The app is scalable to support more features.
 
 ## App Screenshots
 
+Below is screenshot of cryptocurrencies from the api
 ![List of Cryptocurrencies](assets/screenshots/cryptocurrencies.png?raw=true "List of Cryptocurrencies")
 
+This screenshot lists cryptocurrency pairs and their price in real time
 ![List of Cryptocurrency Pairs](assets/screenshots/crypto-pairs.png?raw=true "List of Cryptocurrency Pairs")
