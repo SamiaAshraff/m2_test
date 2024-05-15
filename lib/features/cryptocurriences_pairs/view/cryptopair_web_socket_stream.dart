@@ -51,7 +51,7 @@ class _CryptoPairWebSocketStreamState extends State<CryptoPairWebSocketStream> {
         ? CircularProgressIndicator()
         : Text(
             priceValue,
-            style: f14black,
+            style: f16blackBold,
           );
   }
 }
