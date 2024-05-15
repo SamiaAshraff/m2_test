@@ -22,4 +22,8 @@ flutter run
 ## Assumptions
 The app is scalable to support more features. 
 
-## JSON Data
+## App Screenshots
+
+![List of Cryptocurrencies](assets/screenshots/cryptocurrencies.png?raw=true "List of Cryptocurrencies")
+
+![List of Cryptocurrency Pairs](assets/screenshots/crypto-pairs.png?raw=true "List of Cryptocurrency Pairs")

@@ -15,7 +15,7 @@ class CryptocurrenciesPairs extends StatelessWidget {
         ..add(const CryptoPairsEvent.getCryptoPairs()),
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('List of Cryptocurrencies'),
+          title: const Text('List of Cryptocurrency Pairs'),
         ),
         body: BlocBuilder<CryptoPairsBloc, CryptoPairsState>(
           builder: (context, state) {
